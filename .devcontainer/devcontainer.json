@@ -15,7 +15,13 @@
 				"omnisharp.organizeImportsOnFormat": true,
 				"vssolution.altSolutionFolders": [
 					"app"
-				]
+				],
+				"files.exclude": {
+					"app/Kwality.DI.Scoped/bin/": true,
+					"app/Kwality.DI.Scoped/obj/": true,
+					"app/Kwality.DI.Scoped.Tests/bin/": true,
+					"app/Kwality.DI.Scoped.Tests/obj/": true
+				}
 			},
 			"extensions": [
 				"editorconfig.editorconfig",

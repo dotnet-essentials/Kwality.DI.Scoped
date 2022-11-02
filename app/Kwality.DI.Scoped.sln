@@ -11,6 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100. REPOSITORY CONFIGURATI
 		..\LICENSE = ..\LICENSE
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "300. ANALYZERS AND CODE STYLE CONFIGURATION.", "300. ANALYZERS AND CODE STYLE CONFIGURATION.", "{83086544-3562-4437-9ABC-50DF47155FA0}"
+	ProjectSection(SolutionItems) = preProject
+		.globalconfig = .globalconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "400. SOURCE.", "400. SOURCE.", "{0DB1EA20-E88D-4FA3-9FF2-CA2DCAEAD2B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwality.DI.Scoped", "Kwality.DI.Scoped\Kwality.DI.Scoped.csproj", "{57AE51BE-B4C3-4698-A327-16C2C215EEB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "500. TESTS.", "500. TESTS.", "{73A181F3-B923-4CD2-A662-C62AAEE89646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwality.DI.Scoped.Tests", "Kwality.DI.Scoped.Tests\Kwality.DI.Scoped.Tests.csproj", "{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +31,19 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57AE51BE-B4C3-4698-A327-16C2C215EEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AE51BE-B4C3-4698-A327-16C2C215EEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AE51BE-B4C3-4698-A327-16C2C215EEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AE51BE-B4C3-4698-A327-16C2C215EEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57AE51BE-B4C3-4698-A327-16C2C215EEB1} = {0DB1EA20-E88D-4FA3-9FF2-CA2DCAEAD2B4}
+		{B2F708BA-C5A1-4123-8AF1-DD6E4A3F17CE} = {73A181F3-B923-4CD2-A662-C62AAEE89646}
 	EndGlobalSection
 EndGlobal
