@@ -22,15 +22,38 @@
 # ==                FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # ==                OTHER DEALINGS IN THE SOFTWARE.
 # ======================================================================================================================
+# Build & test the application using .NET SDK 6.0.402.
+name: Build & Test
+on:
+  push:
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: './app/Kwality.DI.Scoped.sln'
 
-# Indicate that this is the `ROOT` configuration file.
-root = true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        dotnet-version: ['6.0.402']
+    name: Building & Testing on .NET ${{ matrix.dotnet }}
+    steps:
+      - name: GIT Checkout
+        uses: actions/checkout@v3
 
-# End every file with a final newline.
-[*]
-insert_final_newline = true
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
 
-# Use a 4 character wide `TAB` to indent `*.json` files.
-[*.json]
-indent_size = 4
-indent_style = tab
+      - name: Install dependencies
+        run: dotnet restore ${SOLUTION}
+
+      - name: Build
+        run: dotnet build /warnaserror --configuration ${BUILD_CONFIG} --no-restore ${SOLUTION}
+
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal ${SOLUTION}

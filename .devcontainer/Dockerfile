@@ -23,14 +23,5 @@
 # ==                OTHER DEALINGS IN THE SOFTWARE.
 # ======================================================================================================================
 
-# Indicate that this is the `ROOT` configuration file.
-root = true
-
-# End every file with a final newline.
-[*]
-insert_final_newline = true
-
-# Use a 4 character wide `TAB` to indent `*.json` files.
-[*.json]
-indent_size = 4
-indent_style = tab
+# Use a Debian (bullseye) based image.
+FROM mcr.microsoft.com/vscode/devcontainers/dotnet:0-6.0-bullseye-slim
